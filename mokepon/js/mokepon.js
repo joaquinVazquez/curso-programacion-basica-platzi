@@ -1,6 +1,9 @@
+function iniciarJuego(){
+    let botonMascotaJugador = document.getElementById('boton-mascota');
+    botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador);
+}
 function seleccionarMascotaJugador(){
     alert("Tu jugador es: ");
 }
 
-let botonMascotaJugador = document.getElementById('boton-mascota');
-botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador);
+window.addEventListener('load', iniciarJuego);
