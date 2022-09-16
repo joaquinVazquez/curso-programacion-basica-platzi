@@ -10,3 +10,15 @@
     justify-content: center;
     align-items: center;
 }
+.tarjeta-mokepon{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-color: aquamarine;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid hotpink;
+}
+input{
+    display: none;
+}
