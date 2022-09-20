@@ -7,27 +7,35 @@
     <title>Mokepon</title>
     <script src="./js/mokepon.js"></script>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <section id="seleccionar-mascota">
-        <h1 class="titulo">MOKEPON! 🔥💧🌱</h1>
+        <h1 class="titulo">Mokepon</h1>
 
-        <h2>Elige tu mascota:</h2>
-        <!-- Mascotas
-            Hipodoge -> Agua
-            Capipepo -> Tierra
-            Ratigueya -> Fuego
-            Langostelvis -> Agua y fuego
-            Pydos -> Tierra y fuego
-        -->
-        <label class="tarjeta-mokepon" for="hipodoge">Hipodoge</label>
-        <input type="radio" name="mascota" id="hipodoge">
+        <h2 class="subtitulo">Elige tu mascota:</h2>
+        <div class="tarjetas">
+            <label class="tarjeta-mokepon" for="hipodoge">
+                <p>Hipodoge</p>
+                <img src="./assets/mokepons_mokepon_hipodoge_attack.webp" alt="Hipodoge">
+            </label>
+            <input type="radio" name="mascota" id="hipodoge">
 
-        <label class="tarjeta-mokepon" for="capipepo">Capipepo</label>
-        <input type="radio" name="mascota" id="capipepo">
+            <label class="tarjeta-mokepon" for="capipepo">
+                <p>Capipepo</p>
+                <img src="./assets/mokepons_mokepon_capipepo_attack.webp" alt="Capipepo">
+            </label>
+            <input type="radio" name="mascota" id="capipepo">
 
-        <label class="tarjeta-mokepon" for="ratigueya">Ratigueya</label>
-        <input type="radio" name="mascota" id="ratigueya">
+            <label class="tarjeta-mokepon" for="ratigueya">
+                <p>Ratigueya</p>
+                <img src="./assets/mokepons_mokepon_ratigueya_attack.webp" alt="Ratigueya">
+            </label>
+            <input type="radio" name="mascota" id="ratigueya">
+        </div>
+        
         <button id="boton-mascota">Seleccionar</button>
     </section>
 
