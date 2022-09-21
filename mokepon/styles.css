@@ -59,6 +59,9 @@ body{
 input{
     display: none;
 }
+input:checked + label{
+    background-color: var(--gren-primary);
+}
 #seleccionar-ataque{
     flex-direction: column;
     align-items: center;
@@ -95,12 +98,14 @@ input{
     display: grid;
     grid-template-columns: 100px 100px;
     text-align: center;
+    gap: 80px;
 }
 .ataques-jugador, .ataques-enemigos{
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
+    font-size: 20px;
 }
 @media(max-width:360px){
     .tarjetas, .tarjetas-ataques{
