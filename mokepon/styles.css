@@ -91,3 +91,8 @@ input{
     color: var(--black);
     font-family: 'Cairo', sans-serif;
 }
+.ataques{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    text-align: center;
+}
