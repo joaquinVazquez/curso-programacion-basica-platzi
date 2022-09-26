@@ -33,6 +33,8 @@ let botonFuego
 let botonAgua
 let botonTierra
 let botones = []
+let indexAtaqueJugador
+let indexAtaqueEnemigo
 let vidasJugador = 3
 let vidasEnemigo= 3
 //Clase
@@ -184,29 +186,29 @@ function ataqueAleatorioEnemigo(){
         ataqueEnemigo.push('TIERRA')
     }
     console.log(ataqueEnemigo)
-    combate()
+    iniciarPelea()
+}
+
+function iniciarPelea(){
+    if (ataqueJugador.length===5) {
+        combate()
+    }
+}
+
+function indexAmbosOponentes(jugador, enemigo){
+    indexAtaqueJugador = ataqueJugador[jugador]
+    indexAtaqueEnemigo = ataqueEnemigo[enemigo]
 }
 
 function combate(){
-    if(ataqueEnemigo == ataqueJugador){
-        crearMensaje("Empate");
-    }else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA'){
-        crearMensaje("Ganaste");
-        vidasEnemigo--   
-        spanVidasEnemigo.innerHTML = vidasEnemigo
-    }else if(ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO'){
-        crearMensaje("Ganastes");   
-        vidasEnemigo--   
-        spanVidasEnemigo.innerHTML = vidasEnemigo
-    }else if(ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
-        crearMensaje("Ganastes");   
-        vidasEnemigo--   
-        spanVidasEnemigo.innerHTML = vidasEnemigo
-    }else{
-        crearMensaje("Perdistes");
-        vidasJugador--
-        spanVidasJugador.innerHTML = vidasJugador
-    } 
+    for (let index = 0; index < ataqueJugador.length; index++) {
+        if(ataqueJugador[index] === ataqueEnemigo[index]){
+            indexAmbosOponentes(index, index)
+            crearMensaje("Empate");
+
+        }
+        
+    }
 
     revisarVidas()
 }
@@ -224,8 +226,8 @@ function crearMensaje(resultado){
     let nuevoAtaqueDelEnemigo = document.createElement('p')
 
     sectionMensajes.innerHTML = resultado
-    nuevoAtaqueDelJugador.innerHTML = ataqueJugador
-    nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+    nuevoAtaqueDelJugador.innerHTML = indexAtaqueJugador
+    nuevoAtaqueDelEnemigo.innerHTML = indexAtaqueEnemigo
     
     
     ataqueDelJugador.appendChild(nuevoAtaqueDelJugador)
