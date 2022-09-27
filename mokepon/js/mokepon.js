@@ -35,6 +35,8 @@ let botonTierra
 let botones = []
 let indexAtaqueJugador
 let indexAtaqueEnemigo
+let victoriasJugador = 0
+let victoriasEnemigo = 0
 let vidasJugador = 3
 let vidasEnemigo= 3
 //Clase
@@ -204,8 +206,29 @@ function combate(){
     for (let index = 0; index < ataqueJugador.length; index++) {
         if(ataqueJugador[index] === ataqueEnemigo[index]){
             indexAmbosOponentes(index, index)
-            crearMensaje("Empate");
-
+            crearMensaje("EMPATE");
+            // victoriasJugador++
+            // spanVidasJugador.innerHTML = victoriasJugador
+        }else if(ataqueJugador[index] === 'FUEGO' && ataqueEnemigo[index] === 'TIERRA'){
+            indexAmbosOponentes(index, index)
+            crearMensaje("GANASTE");
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
+        }else if(ataqueJugador[index] === 'AGUA' && ataqueEnemigo[index] === 'FUEGO'){
+            indexAmbosOponentes(index, index)
+            crearMensaje("GANASTE");
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
+        }else if(ataqueJugador[index] === 'TIERRA' && ataqueEnemigo[index] === 'AGUA'){
+            indexAmbosOponentes(index, index)
+            crearMensaje("GANASTE");
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
+        }else{
+            indexAmbosOponentes(index, index)
+            crearMensaje("PERDISTE");
+            victoriasJugador--
+            spanVidasEnemigo.innerHTML = victoriasEnemigo
         }
         
     }
@@ -214,9 +237,11 @@ function combate(){
 }
 
 function revisarVidas(){
-    if(vidasEnemigo == 0){
+    if(victoriasJugador === victoriasEnemigo){
+        crearMensajeFinal("Esto fue un empate!!")
+    } else if(victoriasJugador > victoriasEnemigo){
         crearMensajeFinal("FELICITACIONES ERES EL GANADOR DEL COMBATE 😀😀")
-    } else if(vidasJugador == 0){
+    }else{
         crearMensajeFinal("LO SENTIMOS HAS PERDIDO EL COMBATE 😥")
     }
 }
