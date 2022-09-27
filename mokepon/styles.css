@@ -71,7 +71,7 @@ input:checked + label{
     border-radius: 20px;
     padding: 10px;
     box-sizing: border-box;
-    width: 100px;
+    width: 80px;
     font-family: 'Cairo', sans-serif;
     font-weight: bold;
     margin: 10px;
