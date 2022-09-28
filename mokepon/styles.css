@@ -112,8 +112,25 @@ input:checked + label{
     align-items: center;
     justify-content: center;
 }
-@media(max-width:360px){
+#ver-mapa button{
+    height: 40px;
+    width: 80px;
+    border-radius: 40px;
+    background: transparent;
+    border: 2px solid var(--gren-primary);
+    color: var(--gren-primary);
+    font-family: 'Cairo', sans-serif;
+    margin: 10px 0;
+} 
+@media(max-width:560px){
     .tarjetas, .tarjetas-ataques{
         flex-direction: column;
+    }
+}
+@media(max-width:300px){
+    #ver-mapa div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
