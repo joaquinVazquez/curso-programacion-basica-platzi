@@ -112,9 +112,6 @@ input:checked + label{
     align-items: center;
     justify-content: center;
 }
-#mapa{
-    border: 2px solid var(--gren-primary);
-}
 @media(max-width:360px){
     .tarjetas, .tarjetas-ataques{
         flex-direction: column;
